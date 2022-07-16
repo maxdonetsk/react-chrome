@@ -30,8 +30,6 @@ const inIframe = () => {
 const toggleShowIframe = () => {
   const iframe = getIframe();
 
-  console.log('iframe', iframe);
-
   if (!iframe) {
     return;
   }
@@ -97,7 +95,6 @@ if (!window.location.ancestorOrigins.contains(extensionOrigin)) {
 }
 
 const messageListener = (message: ChromeMessage, sender: MessageSender, callback: Dispatch<SetStateAction<string>>) => {
-  console.log('msg', message);
   switch (message.action) {
     case 'toggle-show-iframe':
       toggleShowIframe();

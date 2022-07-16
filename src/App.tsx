@@ -70,8 +70,6 @@ export const App = () => {
     };
 
     chrome.tabs && chrome.tabs.query(queryInfo, tabs => {
-      console.log('tabs');
-      console.log(tabs);
       const currentTabId = Number(tabs[0].id);
       chrome.tabs.sendMessage(
           currentTabId,
